@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "title": "AKÜ Computing Community",
+    "description": "We come together to learn, build and create."
+  },
+  "common": {
+    "languageNavigation": "Language selection"
+  },
+  "navigation": {
+    "label": "Main navigation",
+    "about": "About",
+    "events": "Events",
+    "openMenu": "Menu",
+    "closeMenu": "Close",
+    "subtitle": "Student community",
+    "instagram": "Instagram",
+    "skipToContent": "Skip to content",
+    "newTab": "opens in a new tab"
+  },
+  "hero": {
+    "title": "Don’t just follow technology. <highlight>Create.</highlight>",
+    "description": "We come together to learn, build and create. Share your curiosity and develop your ideas with us.",
+    "eventsLabel": "Explore events",
+    "instagramLabel": "Follow us on Instagram",
+    "newTab": "opens in a new tab",
+    "hint": "Curiosity is all you need to start learning.",
+    "imageAlt": "A moment from a community gathering",
+    "imagePlaceholder": "A community photo will appear here.",
+    "imageCaption": "Learn together. Create together."
+  },
+  "home": {
+    "aboutEyebrow": "Who are we?",
+    "aboutTitle": "A community that starts with curiosity.",
+    "aboutDescription": "AKÜ Computing Community brings together students interested in technology. We meet to learn, exchange ideas and create together.",
+    "eventsEyebrow": "Community calendar",
+    "eventsTitle": "Upcoming gatherings",
+    "eventsEmpty": "New events will be shared here.",
+    "eventsEmptyDescription": "Follow our Instagram account for the latest updates."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "title": "AKÜ Bilişim Topluluğu",
+    "description": "Birlikte öğrenmek, geliştirmek ve üretmek için buluşuyoruz."
+  },
+  "common": {
+    "languageNavigation": "Dil seçimi"
+  },
+  "navigation": {
+    "label": "Ana gezinme",
+    "about": "Hakkımızda",
+    "events": "Etkinlikler",
+    "openMenu": "Menü",
+    "closeMenu": "Kapat",
+    "subtitle": "Öğrenci topluluğu",
+    "instagram": "Instagram",
+    "skipToContent": "İçeriğe geç",
+    "newTab": "yeni sekmede açılır"
+  },
+  "hero": {
+    "title": "Teknolojiyi sadece takip etme. <highlight>Üret.</highlight>",
+    "description": "Birlikte öğrenmek, geliştirmek ve üretmek için buluşuyoruz. Merakını paylaş, fikirlerini birlikte geliştirelim.",
+    "eventsLabel": "Etkinlikleri keşfet",
+    "instagramLabel": "Bizi Instagram’da takip et",
+    "newTab": "yeni sekmede açılır",
+    "hint": "Öğrenmek için merak etmen yeterli.",
+    "imageAlt": "Topluluk buluşmasından bir kare",
+    "imagePlaceholder": "Topluluk fotoğrafı burada yer alacak.",
+    "imageCaption": "Birlikte öğren. Birlikte üret."
+  },
+  "home": {
+    "aboutEyebrow": "Biz kimiz?",
+    "aboutTitle": "Merakla başlayan bir topluluk.",
+    "aboutDescription": "AKÜ Bilişim Topluluğu olarak teknolojiye ilgi duyan öğrencileri bir araya getiriyoruz. Birlikte öğrenmek, fikir paylaşmak ve üretmek için buluşuyoruz.",
+    "eventsEyebrow": "Topluluk ajandası",
+    "eventsTitle": "Takvimdeki buluşmalar",
+    "eventsEmpty": "Yeni etkinlikler burada paylaşılacak.",
+    "eventsEmptyDescription": "Güncel paylaşımlarımızı Instagram hesabımızdan takip edebilirsin."
+  }
+}
