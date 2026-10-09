@@ -1,96 +1,60 @@
-import Image from "next/image";
-import { getTranslations } from "next-intl/server";
-import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
-import { Link } from "@/i18n/navigation";
-
-type HeroProps = {
-  imageSrc?: string;
-};
-
-export async function Hero({ imageSrc }: HeroProps) {
-  const t = await getTranslations("hero");
-
+import { Container } from "@/components/ui/Container";
+import Image from "next/image";
+export function Hero() {
   return (
-    <section aria-labelledby="hero-title">
-      <Container className="grid items-center gap-12 py-12 sm:py-16 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:py-20">
+    <section>
+      <Container className="grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2">
+        {/* Sol içerik grubu */}
         <div>
-          <p className="inline-flex items-center gap-2 rounded-full bg-highlight/60 px-3 py-2 text-xs font-semibold text-highlight-foreground">
+          <p className="inline-flex items-center gap-2 rounded-full bg-highlight px-3 py-2 text-xs text-highlight-foreground">
             <span
               aria-hidden="true"
-              className="size-1.5 rounded-full bg-highlight-foreground"
+              className="size-2 rounded-full bg-accent"
             />
+
             {siteConfig.university}
           </p>
-
-          <h1
-            id="hero-title"
-            className="mt-5 max-w-xl text-4xl leading-[1.15] font-extrabold tracking-tight text-balance text-accent sm:text-5xl"
-          >
-            {t.rich("title", {
-              highlight: (chunks) => (
-                <em className="text-code">{chunks}</em>
-              ),
-            })}
+          <h1 className="text-3xl font-bold mt-5">
+            Teknolojiyi sadece takip etme. Üret.
           </h1>
 
-          <p className="mt-5 max-w-lg text-base leading-7 text-muted">
-            {t("description")}
+          <p className="mt-4">
+            Birlikte öğrenmek, geliştirmek ve üretmek için buluşuyoruz.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Link
-              href="/#events"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          {/* Yalnızca butonları düzenleyen grup */}
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href="https://www.instagram.com/akubilisimtoplulugu/"
+              className="rounded-lg bg-accent px-5 py-3 text-accent-foreground"
             >
-              {t("eventsLabel")}
-            </Link>
+              Bizi Instagram’da takip et
+            </a>
 
             <a
-              href={siteConfig.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-highlight px-5 py-3 text-sm font-semibold text-highlight-foreground hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              href="#events"
+              className="rounded-lg bg-highlight px-5 py-3 text-highlight-foreground"
             >
-              {t("instagramLabel")}
-              <span aria-hidden="true">↗</span>
-              <span className="sr-only"> ({t("newTab")})</span>
+              Etkinlikleri keşfet
             </a>
           </div>
-
-          <p className="mt-4 text-xs leading-5 text-muted">
-            {t("hint")}
-          </p>
         </div>
 
-        <figure className="relative min-w-0 rounded-2xl border border-border bg-surface p-2 shadow-lg shadow-accent/10">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-surface-elevated lg:aspect-[4/5]">
-            {imageSrc ? (
-              <Image
-                src={imageSrc}
-                alt={t("imageAlt")}
-                fill
-                sizes="(min-width: 1152px) 448px, (min-width: 1024px) 40vw, 100vw"
-                loading="eager"
-                className="object-cover"
-              />
-            ) : (
-              <div className="flex h-full flex-col items-center justify-center gap-4 px-8 text-center">
-                <span
-                  aria-hidden="true"
-                  className="font-mono text-4xl text-accent/40"
-                >
-                  &lt;/&gt;
-                </span>
-                <p className="max-w-xs text-sm leading-6 text-muted">
-                  {t("imagePlaceholder")}
-                </p>
-              </div>
-            )}
-          </div>
+        {/* Sağ içerik grubu */}
+        <figure className="relative h-72 overflow-hidden rounded-2xl bg-blue-200">
+          <Image
+            loading="eager"
+            src="/globe.svg"
+            alt="Dünya simgesi"
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+          />
 
-          <figcaption className="absolute right-5 bottom-5 left-5 rounded-xl border border-border bg-surface px-4 py-3 text-sm font-semibold text-accent shadow-sm">
-            {t("imageCaption")}
+          <figcaption className="absolute bottom-4 left-4 right-4 rounded-lg bg-surface p-4">
+            <p className="font-semibold">Birlikte öğren.</p>
+            <p className="text-sm text-muted">Birlikte üret.</p>
           </figcaption>
         </figure>
       </Container>
