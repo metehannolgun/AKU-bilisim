@@ -1,43 +1,28 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { AreaCard } from "@/components/home/AreaCard";
+import { EmptyState } from "@/components/ui/EmptyState";
+import { getActivityAreas } from "@/services/content";
+import type { Locale } from "@/i18n/routing";
 
-export function AreasSection() {
+export async function AreasSection() {
+  const locale = (await getLocale()) as Locale;
+  const [t, areas] = await Promise.all([getTranslations("home"), getActivityAreas(locale)]);
   return (
-    <section id="areas" className="scroll-mt-28 py-12">
+    <section id="areas" aria-labelledby="areas-title" className="scroll-mt-28 bg-surface-elevated/60 py-12 sm:py-16">
       <Container>
-        {/* Başlık grubu */}
-        <div>
-          <h2 className="text-2xl font-bold text-accent">
-            Faaliyet ve çalışma alanları
-          </h2>
-
-          <p className="mt-3 text-muted">
-            Birlikte öğrenebileceğimiz ve projeler geliştirebileceğimiz alanlar.
-          </p>
-        </div>
-        {/* Kart grubu */}
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <AreaCard
-            title="Web ve mobil geliştirme"
-            description="Web arayüzleri ve mobil uygulamalar üzerine birlikte çalışmak."
-          />
-
-          <AreaCard
-            title="Yapay zekâ ve veri"
-            description="Verileri incelemek ve yapay zekâ uygulamalarını keşfetmek."
-          />
-
-          <AreaCard
-            title="Gömülü sistemler"
-            description="Sensörler, devreler ve donanımlarla küçük projeler geliştirmek."
-          />
-
-          <AreaCard
-            title="Oyun geliştirme"
-            description="Oyun mekanikleri tasarlamak ve fikirleri oynanabilir hâle getirmek."
-          />
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted">{t("areasEyebrow")}</p>
+        <h2 id="areas-title" className="mt-2 text-2xl font-bold text-accent sm:text-3xl">{t("areasTitle")}</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">{t("areasDescription")}</p>
+        <div className="mt-6">
+          {areas.length === 0 ? <EmptyState title={t("areasEmpty")} /> : (
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {areas.map((area) => <AreaCard key={area.id} area={area} />)}
+            </div>
+          )}
         </div>
       </Container>
     </section>
   );
 }
+

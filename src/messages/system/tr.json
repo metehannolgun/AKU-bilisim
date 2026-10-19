@@ -1,0 +1,16 @@
+{
+  "system": {
+    "loading": "İçerik yükleniyor…",
+    "notFound": {
+      "title": "Bu sayfayı bulamadık.",
+      "description": "Bağlantı değişmiş veya içerik henüz yayımlanmamış olabilir.",
+      "home": "Ana sayfaya dön",
+      "events": "Etkinlikleri keşfet"
+    },
+    "error": {
+      "title": "İçeriği şu anda gösteremiyoruz.",
+      "description": "Lütfen tekrar dene. Sorun devam ederse biraz sonra yeniden ziyaret edebilirsin.",
+      "retry": "Tekrar dene"
+    }
+  }
+}

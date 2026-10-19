@@ -1,0 +1,73 @@
+{
+  "pages": {
+    "events": {
+      "eyebrow": "Community calendar",
+      "title": "Events",
+      "description": "Discover upcoming meetups and explore past events. Entries labelled as examples are development content.",
+      "emptyTitle": "No events have been published yet.",
+      "emptyDescription": "New events will appear here when they are announced.",
+      "groups": { "upcoming": "Upcoming events", "past": "Past events", "undated": "Date to be announced", "cancelled": "Cancelled events" },
+      "groupEmpty": { "upcoming": "There are no upcoming events at the moment.", "past": "There are no past events yet.", "undated": "There are no events awaiting a date.", "cancelled": "There are no cancelled events." },
+      "demo": "Example event",
+      "demoNotice": "Example event — development content, not an actual event announcement.",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "cancelledNotice": "This event has been cancelled.",
+      "dateUnknown": "Date to be announced",
+      "locationUnknown": "Location to be announced",
+      "dateLabel": "Date and time (Istanbul)",
+      "locationLabel": "Location",
+      "details": "Details",
+      "detailsLabel": "Details for {title}",
+      "back": "All events"
+    },
+    "announcements": {
+      "eyebrow": "Community news",
+      "title": "Announcements",
+      "description": "The latest community news and updates. Entries labelled as examples are development content.",
+      "emptyTitle": "No announcements have been published yet.",
+      "emptyDescription": "New announcements will be shared here.",
+      "demo": "Example announcement",
+      "demoNotice": "Example announcement — development content, not an actual announcement.",
+      "details": "Read announcement",
+      "detailsLabel": "Read {title}",
+      "back": "All announcements"
+    },
+    "about": {
+      "eyebrow": "Who we are",
+      "title": "About us",
+      "description": "AKÜ Bilişim Topluluğu brings together students interested in technology at Afyon Kocatepe University.",
+      "values": {
+        "sharing": { "title": "Open sharing", "description": "We share what we know and learn from different experiences." },
+        "learning": { "title": "Learning together", "description": "We ask questions and explore new topics through practice." },
+        "building": { "title": "Building together", "description": "We work together to turn ideas into projects." }
+      },
+      "areasTitle": "Our areas of interest",
+      "areasEmpty": "Our areas of interest will be shared soon.",
+      "relatedLabel": "More about the community",
+      "teamLink": "Meet the team",
+      "contactLink": "Contact us"
+    },
+    "team": {
+      "eyebrow": "The people behind the community",
+      "title": "Our team",
+      "description": "The team that plans and runs our community activities together.",
+      "membersTitle": "Team members",
+      "demoNotice": "Team information is not complete yet. Cards labelled as examples do not represent real people.",
+      "emptyTitle": "Team information has not been shared yet.",
+      "emptyDescription": "Current team information will appear here when it is ready."
+    },
+    "contact": {
+      "eyebrow": "Say hello",
+      "title": "Contact",
+      "description": "Get in touch with questions about the community or ideas you would like to build together.",
+      "instagramTitle": "Reach us on Instagram",
+      "instagramDescription": "Visit our Instagram account for the latest updates or to ask the community a question.",
+      "communityTitle": "Our community",
+      "university": "Afyon Kocatepe University",
+      "communityDescription": "We meet to learn, develop and create together.",
+      "aboutLink": "Get to know the community",
+      "newTab": "opens in a new tab"
+    }
+  }
+}

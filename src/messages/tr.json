@@ -4,7 +4,14 @@
     "description": "Birlikte öğrenmek, geliştirmek ve üretmek için buluşuyoruz."
   },
   "common": {
-    "languageNavigation": "Dil seçimi"
+    "languageNavigation": "Dil seçimi",
+    "turkish": "Türkçe",
+    "english": "İngilizce",
+    "demoLabel": "Örnek içerik",
+    "demoNotice": "Gerçek içerikler henüz eklenmedi. Aşağıdaki kayıtlar geliştirme için hazırlanmış örneklerdir.",
+    "photoPending": "Topluluk fotoğrafları daha sonra eklenecek.",
+    "newTab": "yeni sekmede açılır",
+    "tools": "Kullanılan teknolojiler"
   },
   "navigation": {
     "label": "Ana gezinme",
@@ -15,17 +22,21 @@
     "subtitle": "Öğrenci topluluğu",
     "instagram": "Instagram",
     "skipToContent": "İçeriğe geç",
-    "newTab": "yeni sekmede açılır"
+    "newTab": "yeni sekmede açılır",
+    "siteName": "AKÜ Bilişim Topluluğu",
+    "announcements": "Duyurular",
+    "team": "Ekip",
+    "contact": "İletişim"
   },
   "hero": {
     "title": "Teknolojiyi sadece takip etme. <highlight>Üret.</highlight>",
     "description": "Birlikte öğrenmek, geliştirmek ve üretmek için buluşuyoruz. Merakını paylaş, fikirlerini birlikte geliştirelim.",
     "eventsLabel": "Etkinlikleri keşfet",
-    "instagramLabel": "Bizi Instagram’da takip et",
+    "instagramLabel": "Bize katıl",
     "newTab": "yeni sekmede açılır",
     "hint": "Öğrenmek için merak etmen yeterli.",
     "imageAlt": "Topluluk buluşmasından bir kare",
-    "imagePlaceholder": "Topluluk fotoğrafı burada yer alacak.",
+    "imagePlaceholder": "Birlikte ürettiğimiz anların fotoğrafları yakında burada.",
     "imageCaption": "Birlikte öğren. Birlikte üret."
   },
   "home": {
@@ -33,8 +44,61 @@
     "aboutTitle": "Merakla başlayan bir topluluk.",
     "aboutDescription": "AKÜ Bilişim Topluluğu olarak teknolojiye ilgi duyan öğrencileri bir araya getiriyoruz. Birlikte öğrenmek, fikir paylaşmak ve üretmek için buluşuyoruz.",
     "eventsEyebrow": "Topluluk ajandası",
-    "eventsTitle": "Takvimdeki buluşmalar",
-    "eventsEmpty": "Yeni etkinlikler burada paylaşılacak.",
-    "eventsEmptyDescription": "Güncel paylaşımlarımızı Instagram hesabımızdan takip edebilirsin."
+    "eventsTitle": "Yaklaşan etkinlikler",
+    "eventsEmpty": "Şu anda yaklaşan etkinlik bulunmuyor.",
+    "eventsEmptyDescription": "Yeni etkinlikler duyurulduğunda burada gösterilecek. Geçmiş ve tarihi belirlenmemiş etkinlikleri tüm etkinlikler sayfasında inceleyebilirsin.",
+    "aboutPhotoPlaceholder": "Topluluk fotoğrafımız burada yer alacak.",
+    "aboutLink": "Topluluğu tanı",
+    "values": {
+      "sharing": {
+        "title": "Açık paylaşım",
+        "description": "Bildiklerimizi birbirimizle paylaşırız."
+      },
+      "learning": {
+        "title": "Birlikte öğrenme",
+        "description": "Sorular sorarak ve deneyerek öğreniriz."
+      },
+      "creating": {
+        "title": "Birlikte üretme",
+        "description": "Fikirlerimizi küçük projelere dönüştürürüz."
+      }
+    },
+    "eventsLink": "Tüm etkinlikler",
+    "areasEyebrow": "Odak gruplarımız",
+    "areasTitle": "Faaliyet ve çalışma alanları",
+    "areasDescription": "Birlikte öğrenebileceğimiz ve fikirlerimizi projelere dönüştürebileceğimiz alanlar.",
+    "areasEmpty": "Çalışma alanları yakında paylaşılacak.",
+    "galleryEyebrow": "Topluluk güncesi",
+    "galleryTitle": "Birlikte ürettiklerimiz ve anlar",
+    "galleryDescription": "Buluşmalarımız ve çalışmalarımız için hazırladığımız galeri alanı. Gerçek fotoğraflar henüz eklenmedi.",
+    "galleryEmpty": "Henüz fotoğraf eklenmedi.",
+    "galleryEmptyDescription": "Topluluk buluşmalarından fotoğraflar burada paylaşılacak.",
+    "galleryNoteTitle": "Öğrenmenin birden fazla yolu var.",
+    "galleryNoteDescription": "Soru sorarak, deneyerek ve birbirimizle paylaşarak birlikte ilerliyoruz.",
+    "announcementsTitle": "Topluluk duyuruları",
+    "announcementsDescription": "Topluluğumuzdan haberler ve güncel paylaşımlar.",
+    "announcementsLink": "Tüm duyurular",
+    "announcementsEmpty": "Henüz yayımlanmış duyuru bulunmuyor.",
+    "teamEyebrow": "Birlikte kolaylaştırıyoruz",
+    "teamTitle": "Birlikte yürüten ekip",
+    "teamDescription": "Topluluk çalışmalarını birlikte organize ediyoruz.",
+    "teamLink": "Ekibi tanı",
+    "teamEmpty": "Ekip bilgileri yakında paylaşılacak.",
+    "partnersTitle": "Topluluk iş birlikleri",
+    "partnersDemoNotice": "Gerçek iş birlikleri henüz eklenmedi; gösterilen kurumlar örnektir.",
+    "partnersEmpty": "İş birliği bilgileri henüz eklenmedi.",
+    "joinEyebrow": "Aramıza katıl",
+    "joinInstagram": "Instagram’da bize ulaş",
+    "joinMembership": "Topluluk kayıt formu",
+    "joinDiscord": "Discord sunucusuna gel",
+    "joinEvents": "Etkinlikleri keşfet"
+  },
+  "footer": {
+    "description": "Teknolojiye ilgi duyan öğrencilerin birlikte öğrenmek ve üretmek için buluştuğu topluluk.",
+    "navigationLabel": "Alt menü",
+    "linksTitle": "Hızlı bağlantılar",
+    "contactTitle": "Topluluk ve iletişim",
+    "contactDescription": "Paylaşımlarımızı takip etmek ve bizimle iletişime geçmek için Instagram hesabımıza ulaşabilirsin.",
+    "bottomNote": "Merak et. Öğren. Birlikte üret."
   }
 }

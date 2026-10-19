@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { getSiteOrigin } from "@/lib/site-url";
 import "../globals.css";
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -44,12 +45,23 @@ export async function generateMetadata({
     namespace: "metadata",
   });
 
+  const origin = getSiteOrigin();
+
   return {
+    ...(origin ? { metadataBase: new URL(origin) } : {}),
     title: {
       default: t("title"),
       template: `%s | ${t("title")}`,
     },
     description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      type: "website",
+      locale: locale === "tr" ? "tr_TR" : "en_US",
+      alternateLocale: locale === "tr" ? "en_US" : "tr_TR",
+    },
+    twitter: { card: "summary_large_image", title: t("title"), description: t("description") },
   };
 }
 

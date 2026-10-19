@@ -4,7 +4,14 @@
     "description": "We come together to learn, build and create."
   },
   "common": {
-    "languageNavigation": "Language selection"
+    "languageNavigation": "Language selection",
+    "turkish": "Turkish",
+    "english": "English",
+    "demoLabel": "Demo content",
+    "demoNotice": "Real content has not been added yet. The following records are examples prepared for development.",
+    "photoPending": "Community photos will be added later.",
+    "newTab": "opens in a new tab",
+    "tools": "Technologies"
   },
   "navigation": {
     "label": "Main navigation",
@@ -15,17 +22,21 @@
     "subtitle": "Student community",
     "instagram": "Instagram",
     "skipToContent": "Skip to content",
-    "newTab": "opens in a new tab"
+    "newTab": "opens in a new tab",
+    "siteName": "AKÜ Computing Community",
+    "announcements": "News",
+    "team": "Team",
+    "contact": "Contact"
   },
   "hero": {
     "title": "Don’t just follow technology. <highlight>Create.</highlight>",
     "description": "We come together to learn, build and create. Share your curiosity and develop your ideas with us.",
     "eventsLabel": "Explore events",
-    "instagramLabel": "Follow us on Instagram",
+    "instagramLabel": "Join the community",
     "newTab": "opens in a new tab",
     "hint": "Curiosity is all you need to start learning.",
     "imageAlt": "A moment from a community gathering",
-    "imagePlaceholder": "A community photo will appear here.",
+    "imagePlaceholder": "Photos of the moments we create together will appear here.",
     "imageCaption": "Learn together. Create together."
   },
   "home": {
@@ -34,7 +45,60 @@
     "aboutDescription": "AKÜ Computing Community brings together students interested in technology. We meet to learn, exchange ideas and create together.",
     "eventsEyebrow": "Community calendar",
     "eventsTitle": "Upcoming gatherings",
-    "eventsEmpty": "New events will be shared here.",
-    "eventsEmptyDescription": "Follow our Instagram account for the latest updates."
+    "eventsEmpty": "There are no upcoming events right now.",
+    "eventsEmptyDescription": "New events will appear here when they are announced. Visit all events to explore past events and those awaiting a date.",
+    "aboutPhotoPlaceholder": "Our community photo will appear here.",
+    "aboutLink": "Meet the community",
+    "values": {
+      "sharing": {
+        "title": "Open sharing",
+        "description": "We share what we know with each other."
+      },
+      "learning": {
+        "title": "Learning together",
+        "description": "We learn by asking questions and experimenting."
+      },
+      "creating": {
+        "title": "Creating together",
+        "description": "We turn our ideas into small projects."
+      }
+    },
+    "eventsLink": "All events",
+    "areasEyebrow": "Our focus groups",
+    "areasTitle": "Activities & areas of interest",
+    "areasDescription": "Areas where we can learn together and turn our ideas into projects.",
+    "areasEmpty": "Our areas of interest will be shared soon.",
+    "galleryEyebrow": "Community journal",
+    "galleryTitle": "What we create and the moments we share",
+    "galleryDescription": "A gallery space for our gatherings and projects. Real photos have not been added yet.",
+    "galleryEmpty": "No photos have been added yet.",
+    "galleryEmptyDescription": "Photos from our community gatherings will be shared here.",
+    "galleryNoteTitle": "There is more than one way to learn.",
+    "galleryNoteDescription": "We move forward together by asking questions, experimenting and sharing.",
+    "announcementsTitle": "Community news",
+    "announcementsDescription": "News and the latest updates from our community.",
+    "announcementsLink": "All announcements",
+    "announcementsEmpty": "There are no published announcements yet.",
+    "teamEyebrow": "Making things happen together",
+    "teamTitle": "The people behind the community",
+    "teamDescription": "We organize our community activities together.",
+    "teamLink": "Meet the team",
+    "teamEmpty": "Team information will be shared soon.",
+    "partnersTitle": "Community partnerships",
+    "partnersDemoNotice": "Real partnerships have not been added yet; the organizations shown are examples.",
+    "partnersEmpty": "Partnership information has not been added yet.",
+    "joinEyebrow": "Join us",
+    "joinInstagram": "Get in touch on Instagram",
+    "joinMembership": "Community registration form",
+    "joinDiscord": "Join our Discord server",
+    "joinEvents": "Explore events"
+  },
+  "footer": {
+    "description": "A community where students interested in technology come together to learn and create.",
+    "navigationLabel": "Footer navigation",
+    "linksTitle": "Quick links",
+    "contactTitle": "Community & contact",
+    "contactDescription": "Visit our Instagram account to follow our updates and get in touch with us.",
+    "bottomNote": "Stay curious. Learn. Create together."
   }
 }

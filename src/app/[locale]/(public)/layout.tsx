@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 
 type PublicLayoutProps = {
   children: ReactNode;
@@ -21,6 +22,7 @@ export default async function PublicLayout({ children }: PublicLayoutProps) {
       <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
         {children}
       </main>
+      <SiteFooter />
     </>
   );
 }

@@ -1,0 +1,73 @@
+{
+  "pages": {
+    "events": {
+      "eyebrow": "Topluluk ajandası",
+      "title": "Etkinlikler",
+      "description": "Yaklaşan buluşmaları keşfet, geçmiş etkinliklere göz at. Örnek etiketi taşıyan kayıtlar geliştirme içeriğidir.",
+      "emptyTitle": "Henüz yayımlanmış etkinlik bulunmuyor.",
+      "emptyDescription": "Yeni etkinlikler duyurulduğunda burada yer alacak.",
+      "groups": { "upcoming": "Yaklaşan etkinlikler", "past": "Geçmiş etkinlikler", "undated": "Tarihi belirlenecek etkinlikler", "cancelled": "İptal edilen etkinlikler" },
+      "groupEmpty": { "upcoming": "Şu anda yaklaşan etkinlik bulunmuyor.", "past": "Henüz geçmiş etkinlik bulunmuyor.", "undated": "Tarihi beklenen etkinlik bulunmuyor.", "cancelled": "İptal edilen etkinlik bulunmuyor." },
+      "demo": "Örnek etkinlik",
+      "demoNotice": "Örnek etkinlik — geliştirme içeriğidir; gerçek bir etkinlik duyurusu değildir.",
+      "completed": "Tamamlandı",
+      "cancelled": "İptal edildi",
+      "cancelledNotice": "Bu etkinlik iptal edilmiştir.",
+      "dateUnknown": "Tarih henüz belirlenmedi",
+      "locationUnknown": "Konum henüz belirlenmedi",
+      "dateLabel": "Tarih ve saat (İstanbul)",
+      "locationLabel": "Konum",
+      "details": "Detaylar",
+      "detailsLabel": "{title} etkinliğinin detayları",
+      "back": "Tüm etkinlikler"
+    },
+    "announcements": {
+      "eyebrow": "Topluluktan haberler",
+      "title": "Duyurular",
+      "description": "Toplulukla ilgili güncel haberler ve bilgilendirmeler. Örnek etiketi taşıyan kayıtlar geliştirme içeriğidir.",
+      "emptyTitle": "Henüz yayımlanmış duyuru bulunmuyor.",
+      "emptyDescription": "Yeni duyurular burada paylaşılacak.",
+      "demo": "Örnek duyuru",
+      "demoNotice": "Örnek duyuru — geliştirme içeriğidir; gerçek bir duyuru değildir.",
+      "details": "Duyuruyu oku",
+      "detailsLabel": "{title} duyurusunu oku",
+      "back": "Tüm duyurular"
+    },
+    "about": {
+      "eyebrow": "Biz kimiz?",
+      "title": "Hakkımızda",
+      "description": "AKÜ Bilişim Topluluğu, Afyon Kocatepe Üniversitesinde teknolojiye ilgi duyan öğrencileri bir araya getirir.",
+      "values": {
+        "sharing": { "title": "Açık paylaşım", "description": "Bildiklerimizi paylaşır, farklı deneyimlerden öğreniriz." },
+        "learning": { "title": "Birlikte öğrenme", "description": "Sorular sorar, yeni konuları deneyerek keşfederiz." },
+        "building": { "title": "Birlikte üretme", "description": "Fikirlerimizi projelere dönüştürmek için birlikte çalışırız." }
+      },
+      "areasTitle": "Çalışma alanlarımız",
+      "areasEmpty": "Çalışma alanları yakında paylaşılacak.",
+      "relatedLabel": "Topluluk hakkında diğer sayfalar",
+      "teamLink": "Ekibimizle tanış",
+      "contactLink": "Bize ulaş"
+    },
+    "team": {
+      "eyebrow": "Birlikte yürütenler",
+      "title": "Ekibimiz",
+      "description": "Topluluğun çalışmalarını birlikte planlayan ve yürüten ekip.",
+      "membersTitle": "Ekip üyeleri",
+      "demoNotice": "Ekip bilgileri henüz tamamlanmadı. Örnek işaretli kartlar gerçek kişileri temsil etmez.",
+      "emptyTitle": "Ekip bilgileri henüz paylaşılmadı.",
+      "emptyDescription": "Güncel ekip bilgileri hazır olduğunda burada yer alacak."
+    },
+    "contact": {
+      "eyebrow": "Tanışalım",
+      "title": "İletişim",
+      "description": "Toplulukla ilgili soruların ve birlikte üretmek istediğin fikirlerin için bize ulaşabilirsin.",
+      "instagramTitle": "Instagram’dan bize ulaş",
+      "instagramDescription": "Güncel paylaşımlarımızı takip etmek veya topluluğa bir soru sormak için Instagram hesabımızı ziyaret edebilirsin.",
+      "communityTitle": "Topluluğumuz",
+      "university": "Afyon Kocatepe Üniversitesi",
+      "communityDescription": "Birlikte öğrenmek, geliştirmek ve üretmek için buluşuyoruz.",
+      "aboutLink": "Topluluğu tanı",
+      "newTab": "yeni sekmede açılır"
+    }
+  }
+}

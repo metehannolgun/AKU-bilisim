@@ -1,229 +1,150 @@
 # AKÜ Bilişim Topluluğu
 
-Topluluğun etkinliklerini, duyurularını ve çalışmalarını bir araya getirecek,
-mobil öncelikli web sitesi. Kodlar ilişkili bileşenlerden oluşan paketler halinde
-paylaşılıyor; kullanıcı yazarak öğreniyor, ardından birlikte inceleniyor.
+Afyon Kocatepe Üniversitesi Bilişim Topluluğu için geliştirilen, Türkçe ve İngilizce public site. Tasarım; krem zemin, koyu yeşil, sarı vurgu, fotoğraf odaklı bölümler ve mobil öncelikli yerleşim kullanır.
 
 ## Mevcut durum
 
-- Next.js 16.3.7 App Router, React 19, TypeScript strict ve Tailwind CSS 4 kurulu.
-- next-intl ile Türkçe `/` ve İngilizce `/en`, dil seçimi ve çevrilen metadata hazır.
-- Public layout, ortak navbarı ve tek `<main>` alanını yönetiyor.
-- Navbarın mobil menüsü, Escape ile kapanma ve bölüm bağlantıları hazır.
-- Hero, fotoğraf alanı ve iki CTA içeriyor; gerçek fotoğraf henüz eklenmedi.
-- Kısa topluluk tanıtımı ve etkinliklerin boş durumu hazır.
-- Krem, koyu yeşil ve sarı renk tokenları; Plus Jakarta Sans ve ortak Container kullanılıyor.
-- Supabase, admin paneli, CRUD ve diğer public sayfalar henüz uygulanmadı.
-- Bu aşama production'a hazır nihai ürün değildir.
+- Ana sayfanın bütün bölümleri, ortak navbar, mobil menü ve footer mevcut.
+- Etkinlik listesi ve slug üzerinden açılan detay sayfaları çalışır.
+- Etkinlikler yaklaşan, geçmiş, tarihi belirlenmemiş ve iptal edilmiş gruplarına ayrılır.
+- Duyuru listesi/detayı, hakkımızda, ekip ve iletişim sayfaları mevcut.
+- Türkçe `/`, İngilizce `/en`; dil değişimi mevcut sayfanın yolunu korur.
+- Liste, detay ve ana sayfa aynı içerik servislerini kullanır.
+- Boş durum, yüklenme, hata ve bulunamayan sayfa görünümleri vardır.
+- Yerelleştirilmiş metadata, Open Graph görseli, robots ve sitemap temeli hazırdır.
+- Supabase projesi/bağlantısı, giriş ve admin paneli henüz kurulmadı; bunları birlikte geliştireceğiz.
+
+Bu aşama public site uygulamasıdır. Veriler yerel örnek kayıtlardan gelir; kalıcı içerik yönetimi ve admin güvenlik kontrolleri tamamlanmadan production'a hazır kabul edilmez.
 
 ## Yerel geliştirme
 
-Kurulu Next.js rehberinin istediği minimum Node.js sürümü 20.9'dur.
-Proje zaten initialize edildi; aynı klasörde tekrar create-next-app çalıştırma.
+Node.js 20.9 veya üzeri gerekir. Mevcut projede yeniden create-next-app çalıştırma.
 
 ```powershell
-cd C:\dev\personal\aku-bilisim
 npm ci
 npm run dev
 ```
 
-Bağımlılıklar zaten kuruluysa doğrudan `npm run dev` yeterli.
-Tarayıcıda Türkçe için http://localhost:3000, İngilizce için
-http://localhost:3000/en adresini aç.
+Türkçe: http://localhost:3000
+
+İngilizce: http://localhost:3000/en
 
 ```powershell
 npm run lint
 npm run typecheck
+npm run test:content
 npm run build
 npm run start
 ```
 
-`start` için önce başarılı bir build gerekir. Build, next/font/google nedeniyle
-ilk derlemede font sağlayıcısına erişim gerektirebilir.
+`start`, başarılı bir build gerektirir. İlk build, Google fontlarını alabilmek için internet erişimi gerektirebilir. Windows SWC önbelleği, mevcut `next.config.ts` ayarıyla kullanıcı profili altındaki `.cache/aku-bilisim-swc` klasöründe tutulur; sistem izinleri değiştirilmez.
 
-Windows'ta SWC'nin varsayılan önbellek klasörü izin denetiminden geçmezse
-`next.config.ts`, kullanıcı profili altındaki `.cache/aku-bilisim-swc` konumunu
-kullanır. Bu ayar yalnızca Next.js işlemi için geçerlidir; Windows izinlerini
-değiştirmez. Önceden tanımlanmış `SWC_NATIVE_BINDING_CACHE` değerini korur.
-Plugin, önbellek yolu ayarlandıktan sonra yüklenir. SWC'nin desteklediği davranış:
-https://github.com/swc-project/swc/blob/main/docs/native-addon-carriers.md
+## Sayfalar
 
-## Teknoloji kararları
-
-| Teknoloji | Kullanım |
+| Türkçe yol | İçerik |
 | --- | --- |
-| Next.js App Router | Sayfalar, ortak layout, sunucuda veri okuma, metadata |
-| TypeScript strict | Props, içerik modelleri ve veritabanı tipleri |
-| Tailwind CSS 4 | Mobil öncelikli responsive tasarım ve tasarım tokenları |
-| Supabase PostgreSQL | Kalıcı içerik ve ilişkiler; veri aşamasında bağlanacak |
-| Supabase Auth / Storage | Admin oturumu ve görsel yükleme |
-| Zod / React Hook Form | Sunucuda doğrulama ve etkileşimli admin formları |
-| shadcn/ui / Lucide | Gerektikçe eklenecek ortak UI ve ikonlar |
+| `/` | Ana sayfa |
+| `/etkinlikler` | Gruplanmış etkinlik listesi |
+| `/etkinlikler/[slug]` | Etkinlik detayı |
+| `/duyurular` | Yayımlanmış duyurular |
+| `/duyurular/[slug]` | Duyuru detayı |
+| `/hakkimizda` | Topluluk ve çalışma alanları |
+| `/ekibimiz` | Aktif ekip üyeleri |
+| `/iletisim` | Doğrulanmış iletişim bağlantıları |
 
-Son dört satırdaki paket ve servisler henüz projeye eklenmedi. Animasyon
-kütüphanesini somut ihtiyaç oluşursa değerlendireceğiz.
+İngilizce yollar aynı segmentleri `/en` önekiyle kullanır. Örneğin `/en/etkinlikler`. Menü bağlantıları, `src/i18n/navigation.ts` üzerinden locale'i korur.
 
-## Hedef mimari
-
-Aşağıdaki yapı hedeftir; klasörleri ilgili özellik geliştirildiğinde oluşturacağız.
+## Klasör ve veri akışı
 
 ```text
 src/
   app/
-    globals.css              # ortak stiller ve tasarım tokenları
     [locale]/
-      layout.tsx             # html, body, fontlar, dil ve metadata
+      layout.tsx                 # belge dili, font, provider ve metadata
+      opengraph-image.tsx        # yerelleştirilmiş paylaşım görseli
       (public)/
-        layout.tsx           # public navbar, main; footer daha sonra
-        page.tsx             # Türkçe /, İngilizce /en
-        etkinlikler/
-          page.tsx
-          [slug]/page.tsx
-        duyurular/
-          page.tsx
-          [slug]/page.tsx
-        hakkimizda/page.tsx
-        ekibimiz/page.tsx
-        iletisim/page.tsx
-    admin/
-      layout.tsx             # public siteden ayrı admin görünümü
-      login/page.tsx
-      (protected)/
-        layout.tsx           # sunucuda admin kontrolü
-        page.tsx             # dashboard
-        etkinlikler/
-        duyurular/
-        ekip/
-        galeri/
-        sponsorlar/
-        faaliyet-alanlari/
-        site-icerikleri/
-        sosyal-medya/
-        ayarlar/
-    sitemap.ts
+        layout.tsx               # ortak header + main + footer
+        page.tsx                 # ana sayfadaki bölümlerin sırası
+        etkinlikler/[slug]/
+        duyurular/[slug]/
+        hakkimizda/
+        ekibimiz/
+        iletisim/
+        not-found.tsx
+        loading.tsx
+        error.tsx
     robots.ts
+    sitemap.ts
   components/
-    home/
-    layout/
-    events/
-    admin/
-    ui/
-  lib/
-    supabase/                # tarayıcı / sunucu istemcileri
-    auth/                    # ortak sunucu yetki kontrolü
-    validations/             # Zod şemaları
-    utils/
-  services/                  # içerik sorguları ve yazma işlemleri
-  types/                     # ortak modeller, üretilmiş DB tipleri
-  config/                    # site.ts: ad, üniversite ve Instagram
-  i18n/                      # routing, navigation, request
-  messages/                  # tr.json, en.json
-  proxy.ts                   # locale yönlendirmesi
-public/
-  images/                    # topluluk fotoğrafları
-supabase/
-  migrations/
-  seed.sql
+    home/                        # ana sayfa bölümleri
+    events/                      # ortak etkinlik kartı
+    announcements/               # ortak duyuru görünümü
+    layout/                      # navbar, footer ve dil seçimi
+    ui/                          # içerikten bağımsız ortak parçalar
+  types/                         # içerik ve etkinlik modelleri
+  data/                          # açıkça örnek olarak işaretlenen kayıtlar
+  services/content.ts            # public içerik okuma sınırı
+  lib/                           # tarih, görünürlük, gruplama, metadata
+  i18n/                          # routing, navigation, request
+  messages/
+    tr.json / en.json            # ortak layout ve ana sayfa metinleri
+    pages/tr.json / en.json      # public sayfa ve kart metinleri
+    system/tr.json / en.json     # hata, yüklenme ve 404 metinleri
+scripts/
+  check-public-content.mjs        # veri davranışlarının regresyon kontrolü
 ```
 
-(public) ve (protected) route group adları URL'ye eklenmez. Ana sayfa
-src/app/[locale]/(public)/page.tsx konumundadır. Galeri/projeler public sayfaları
-gerçek içerik ihtiyacı oluşursa eklenecek. Admin ve içerik detayları bu yapıda
-gelecek aşamaları gösterir; henüz uygulanmadı.
+```text
+Yerel iki dilli kayıtlar
+        ↓
+services/content.ts
+        ↓ yerelleştirilmiş, public görünür modeller
+Sayfa ve section componentleri
+        ↓
+Kartlar ve ortak UI
+```
 
-Sayfalar varsayılan olarak Server Component kalacak. State, olay işleyici veya
-tarayıcı API'si gereken küçük bileşenler Client Component olacak. Normal bir link
-göstermek tek başına use client gerektirmez.
+Supabase aşamasında asıl değişecek katman içerik servisleridir. Sayfalar ve kartlar aynı modelleri kullanmaya devam eder. Site metinleri, faaliyet alanları, galeri, ekip ve iş birlikleri de ortak veri kaynağından okunur.
 
-## Geliştirme aşamaları
+Sayfalar ve içerik bölümleri Server Component'tir. Mobil menü, dil seçimi ve hata durumunu yeniden deneme gibi etkileşim gereken küçük parçalar Client Component'tir. Salt sayfa bağlantısı göstermek `use client` gerektirmez.
 
-Her aşamada ilişkili bileşenlerin kodları ve açıklamaları birlikte paylaşılır.
-Kullanıcı bunları uygular; inceleme ve doğrulama sonrasında sonraki pakete geçilir.
-Doğrudan dosya değişiklikleri kullanıcının isteğiyle yapılır.
+## İçerik kuralları
 
-1. Hero ve tasarım temeli: Mobil tipografi, aralıklar, CTA, focus ve tokenlar.
-2. Public layout: Navbar, hamburger menü, footer ve route group mantığı.
-3. Etkinlik modeli: TypeScript modeli, açıkça demo etiketli veri, kart ve liste.
-4. Public içerik: Etkinlik/duyuru detayları, hakkında, ekip ve iletişim;
-   loading, empty ve not-found durumları.
-5. Supabase: İlişkisel schema, migration, RLS, üretilmiş tipler ve sunucuda okuma.
-6. Admin erişimi: Login ekranı, oturum, sunucuda admin yetkisi ve korunan layout.
-7. Etkinlik CRUD: Zod, React Hook Form, Server Actions, yayın durumu ve hatalar.
-8. Diğer yönetim alanları: Duyuru, ekip, sponsor, kategori, galeri ve Storage.
-9. Site yönetimi: Metinler, sayılar, sosyal linkler, logo, CTA ve tema ayarları.
-10. Yayın hazırlığı: Dinamik metadata, OpenGraph, sitemap, robots, takvime ekle,
-    mobil/tablet/desktop, erişilebilirlik, yetki/CRUD testleri ve Vercel yayını.
+- `isDemo`, örnek içerikleri işaretler; arayüz bunları gerçek kayıt gibi sunmaz.
+- Güncel ekip, sponsor, üye sayısı, WhatsApp veya e-posta bilgisi uydurulmaz.
+- Henüz gerçek fotoğraf yoktur; görsel alanları açık yer tutucular gösterir.
+- Eksik tarih, konum ve görseller `null` olarak saklanır.
+- Etkinlik zamanları saat dilimi içeren ISO 8601 metnidir. Gösterimde `Europe/Istanbul` kullanılır.
+- `draft` etkinlikler hem listeden hem doğrudan detay erişiminden gizlenir.
+- `published`, `completed` ve `cancelled` etkinlikler public okunabilir. İptaller ayrı gösterilir ve yaklaşanlar arasına girmez.
+- Ana sayfa en yakın üç yayımlanmış etkinliği gösterir. Geçmiş veya tarihsiz bir kayıt otomatik olarak yayından kaldırılmaz.
+- Geçmiş/yaklaşan ayrımı başlangıç zamanı üzerinden yapılır; canlı süre veya devam eden etkinlik durumu bu aşamada yoktur.
+- Duyurularda yalnızca `published`, ekip ve iş birliklerinde yalnızca aktif kayıtlar görünür.
+- İçerik metinleri düz metin olarak güvenli biçimde render edilir; rich-text editörü henüz yoktur.
+- Örnek etkinlik/duyuru detayları arama motorlarında indekslenmez ve sitemap'e eklenmez.
 
-## Son tasarım paketi (uygulandı)
+## Ortam ayarları ve SEO
 
-- `globals.css`: Krem zemin, koyu yeşil ana vurgu ve sarı ikincil vurgu.
-  Renkler değiştirilebilir; doğrulanmış marka renkleri değildir.
-- `[locale]/layout.tsx`: Plus Jakarta Sans, belge dili ve çevrilen metadata.
-- `Container`: Ortak maksimum genişlik ve mobil/masaüstü yatay boşluklar.
-- `(public)/layout.tsx`: Navbar, içeriğe atlama bağlantısı ve ortak main alanı.
-- `SiteHeader`: Ortak site bilgileri, bölüm bağlantıları ve dil seçimi.
-- `MobileMenu`: Client Component; state, aria-expanded ve Escape ile odak dönüşü.
-- `Hero`: Server Component; kendi çevirilerini okur. Başlık vurgusu t.rich ile
-  biçimlenir; etkinlikler ve Instagram CTA'ları bulunur.
-- `page.tsx`: Hero, topluluk tanıtımı ve etkinliklerin boş durumunu sıralar.
+`.env.example` dosyasını `.env.local` olarak kopyalayabilirsin. Şu an gerçek bağlantı anahtarı gerekmiyor.
 
-Fotoğrafı `public/images/community-hero.jpg` konumuna ekledikten sonra sayfada
-`<Hero imageSrc="/images/community-hero.jpg" />` kullanılabilir. Fotoğraf yokken
-çevrilen yer tutucu gösterilir. `imageAlt`, seçilen fotoğrafa göre düzenlenmelidir.
+| Değişken | Kullanım |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Yayınlanacak sitenin gerçek origin'i. Yerelde boş bırakılabilir. |
+| `NEXT_PUBLIC_SUPABASE_URL` | Birlikte yapılacak Supabase kurulumu için ayrıldı; henüz kullanılmıyor. |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Aynı kurulum için ayrıldı; henüz kullanılmıyor. |
 
-Son kontrolde build, lint ve typecheck geçti. 1280px masaüstü ve 375px mobil
-görünümde yatay taşma bulunmadı. Mobil menü, Escape ile kapanma, TR/EN geçişi
-ve locale koruyan bölüm bağlantıları tarayıcıda doğrulandı.
+Gerçek site adresi ayarlanmadan canonical/hreflang için alan adı uydurulmaz. Sitemap, site adresi yokken boş döner. Yayın öncesi gerçek HTTPS adresi ayarlanıp build yeniden alınmalıdır. Yeni gerçek görseller eklendiğinde Supabase Storage alan adı da Next Image yapılandırmasına açıkça eklenmelidir.
 
-## Kaynaklar ve içerik doğruluğu
+## Birlikte devam edeceğimiz aşama
 
-İnceleme tarihi: 30 Eylül 2026.
+1. Supabase projesi ve yerel bağlantı ayarları.
+2. Migration dosyaları: etkinlik, çeviri, duyuru, ekip, galeri, faaliyet alanı, sponsor, site ayarı ve sosyal bağlantı modelleri.
+3. Public okuma servislerini gerçek veritabanına bağlama ve RLS politikaları.
+4. `/admin` için ayrı layout, Supabase Auth ve sunucuda admin yetki kontrolü.
+5. Etkinlik/duyuru CRUD; ardından ekip, galeri, kategori, sponsor ve site içeriği yönetimi.
+6. Storage yükleme kuralları, form doğrulaması ve hata akışları.
+7. Gerçek verilerle güvenlik, erişilebilirlik, performans ve yayın kontrolleri.
 
-- Kullanıcının verdiği Instagram: https://www.instagram.com/akubilisimtoplulugu/
-  İnceleme aracı profili okuyamadı. Logo, marka renkleri, iletişim dili ve güncel
-  Instagram içerikleri doğrulanamadı.
-- AKÜ resmi topluluk listesi: https://topluluklar.aku.edu.tr/index.php
-  Bilişim Topluluğu kaydı ve bilişim eğitimi/etkinlikleriyle ilgili amaç bulunuyor.
-- AKÜ YBS'nin 27 Kasım 2025 tarihli haberi, toplulukla birlikte yapılan
-  “Yapay Zekâ Çağında Üniversite Öğrencisi Olmak” söyleşisini doğruluyor:
-  https://ybs.aku.edu.tr/2025/11/27/bolum-baskanimiz-doc-dr-ozdinc-yapay-zeka-caginda-universite-ogrencisi-olmayi-anlatti/
+Admin layout kontrolü tek başına yetkilendirme sağlamaz. İlgili aşamada her yazma işlemi sunucuda doğrulanacak, veritabanı ve Storage erişimi ayrıca RLS politikalarıyla korunacak. Secret/service-role anahtarları client'a veya `NEXT_PUBLIC_` değişkenlerine konmayacak.
 
-Eski haberler güncel yönetimi veya planlanan etkinlikleri kanıtlamaz. Üye sayısı,
-güncel ekip, sponsorlar, e-posta, telefon ve WhatsApp doğrulanmadan yayımlanmayacak.
-Demo içerikler gerçek etkinlik/kişi gibi sunulmayacak. Bilinmeyen değerler boş veya
-admin tarafından düzenlenebilir olacak; sayı bulunmaması sıfır olduğu anlamına gelmez.
-
-## Supabase aşamasındaki kurulum
-
-Henüz bağlantı veya SQL uygulanmadı. İlgili aşamada birlikte:
-
-1. Supabase projesini oluşturup URL ve publishable key'i .env.local içine alacağız.
-   .env.example yalnızca değişken adları ve örnek değerler içerecek.
-2. events, announcements, team_members, activity_categories, sponsors,
-   gallery, site_settings ve social_links migration'larını yazacağız.
-   Admin yetkisi için kullanıcı tarafından değiştirilemeyen bir rol kaydı ekleyeceğiz.
-3. RLS ile public okumanın published/active içerikle sınırlı olmasını sağlayacağız.
-   Completed/cancelled etkinliklerin public görünürlüğünü açıkça tanımlayacağız.
-4. Supabase Auth kullanıcısını oluşturup güvenilir yönetim işlemiyle admin atayacağız.
-   Sadece giriş yapmış olmak içerik yönetme yetkisi vermeyecek.
-5. Her Server Action'da oturum, admin yetkisi ve Zod doğrulaması uygulayacağız.
-   Layout kontrolü tek başına güvenlik sınırı olmayacak.
-6. Storage için bucket politikaları, boyut sınırı, izin verilen görsel türleri ve
-   güvenli dosya adları tanımlayacağız.
-
-Gizli/service role anahtarı client bundle'a veya NEXT_PUBLIC_ değişkenine konmaz.
-Publishable key'in tarayıcıda bulunabilmesi RLS ihtiyacını ortadan kaldırmaz.
-
-## Deployment aşamasında
-
-Hedef Vercel + Supabase. Git deposu Vercel'e bağlanacak; production ortam
-değişkenleri ve Supabase Auth site/redirect URL'leri gerçek domain ile ayarlanacak.
-Production migration'ları, admin hesabı ve Storage politikaları yayın öncesi
-kontrol edilecek. Demo veriler production'a otomatik yüklenmeyecek.
-
-Build/lint/typecheck ve mobil testlere ek olarak admin login/logout, yetkisiz
-erişim, RLS, CRUD ve upload akışları gerçek test projesinde sınanacak. Bunlar
-tamamlanmadan uygulama production-ready olarak tanımlanmayacak.
-
-Sonraki olası özellikler: etkinlik kayıt sistemi, e-posta bildirimleri, çoklu admin
-rolleri, içerik değişiklik geçmişi ve proje vitrini.
+Supabase ve admin aşamasına hazır olduğumuzda çalışma biçimi yeniden mentor moduna dönecek: birlikte adım adım geliştireceğiz.
